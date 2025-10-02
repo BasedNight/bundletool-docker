@@ -5,7 +5,7 @@
 # -lc …: run bundletool command within container so that environment variables loaded from .env are properly expanded
 # $ is reserved in Make syntax, so use double $ to escape it, i.e. $$ = $ after make processing
 
-%.apks: %.aab .env
+%.apks: %.aab .env keystore.bak.jks
 	docker run --rm \
     -u "$$(id -u)":"$$(id -g)" \
 	--env-file .env \
