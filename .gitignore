@@ -1,0 +1,13 @@
+# avoid accidentally committing secrets
+.env
+*.jks
+
+
+# don't commit build artifacts
+*.aab
+*.apks
+*.zip
+*.apk
+
+# in case you don't make clean
+toc.pb
