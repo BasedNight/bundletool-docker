@@ -1,6 +1,6 @@
 Bundletool Dockerfile + APK Helper Makefile
 =================================
-I created this Dockerfile because I use NixOS, and I could not get the package from Nixpkgs to work for the life of me—presumably because glibc and Nix would not play nice. My use case is to produce signed APKs from a Android app bundle, so I also threw together a quick Makefile to help me do so using the containerized `bundletool`.
+I created this Dockerfile because I use NixOS, and I could not get the package from Nixpkgs to work for the life of me—presumably because glibc and Nix would not play nice. My use case is to produce signed APKs from an Android app bundle, so I also threw together a quick Makefile to help me do so using the containerized `bundletool`.
 
 Building & testing
 ----------------
@@ -10,7 +10,7 @@ Building & testing
 
 Running `bundletool` using the image
 ----------------
-This assumes you are using the latest version of `bundletool` (at time of writing, 1.18.2), and that you are running this command from the directory containing the input `.aab` file—in this case, `app-release.aab`.
+This example assumes you are using the latest version of `bundletool` (at time of writing, 1.18.2), and that you are running this command from the directory containing the input `.aab` file—in this case, `app-release.aab`.
 
 ```
 docker run --rm -v "$PWD":/work -w /work bundletool:1.18.2 \
